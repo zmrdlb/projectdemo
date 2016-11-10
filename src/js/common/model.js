@@ -9,7 +9,7 @@ define(['libio/ioconfig','libio/interio','common/config'],function($ioconfig,$in
 	 * 统一处理未登录
 	 */
 	$ioconfig.login.filter = function(result){
-		return result.errcode == 1;
+		return result.code == 'A0002';
 	};
 	$ioconfig.login.url = Config.loginurl;
 
@@ -17,37 +17,22 @@ define(['libio/ioconfig','libio/interio','common/config'],function($ioconfig,$in
 	 * 所有接口的io业务错误统一处理
 	 */
 	$ioconfig.error.filter = function(result) {
-		return result.errcode != 0;
+		return result.code != 'A0001';
 	};
 	$ioconfig.ioargs.fail = function(result){
 		alert(result.errmsg || '网络错误');
 	};
 
+	$ioconfig.ioargs.crossDomain = true;
 	/**
 	 * 数据接口配置
 	 */
 	var basehost = Config.modelorgin;
 	$ioconfig.setTrans([
-		//获取项目列表
-        {name: 'subjectlist', args: {url: basehost+'/api/spaces',method:'GET'}},
-		//获取项目文件结构
-		{name: 'subjectfile', args: {url: basehost+'/api/space/{subjectname}',method:'GET'}},
-		//新建项目
-		{name: 'subjectadd', args: {url: basehost+'/api/space/{subjectname}',method:'POST'}},
-		//删除项目
-		{name: 'subjectdelete', args: {url: basehost+'/api/space/{subjectname}',method:'DELETE'}},
-		//获取文件
-		{name: 'fileget', args: {url: basehost+'/api/space/{subjectname}/{filepath}',method:'GET'}},
-		//新增文件
-		{name: 'fileadd', args: {url: basehost+'/api/space/{subjectname}/{filepath}',method:'POST'}},
-		//更改文件
-		{name: 'filechange', args: {url: basehost+'/api/space/{subjectname}/{filepath}',method:'PUT'}},
-		//删除文件
-		{name: 'filedelete', args: {url: basehost+'/api/space/{subjectname}/{filepath}',method:'DELETE'}},
-		//获取当前登录用户信息
-        {name: 'userinfo', args: {url: basehost+'/api/user',method:'GET'}},
-        //获取上传图片所需的token
-        {name: 'uptoken', args: {url: basehost+'/api/uptoken',method:'GET'}}
+		//没此接口，只是给一个url中需要参数的使用说明
+		{name: 'main', args: {url: basehost+'/tracer/main/trace/{id}',method:'GET'}},
+		//获取用户信息
+        {name: 'userinfo', args: {url: basehost+'/userinfo',method:'GET'}}
     ]);
 
     /**
@@ -74,97 +59,21 @@ define(['libio/ioconfig','libio/interio','common/config'],function($ioconfig,$in
        @param {Object} urlData 针对url里面有{替换参数名}的情况，传入的键值对应数据
      */
     return {
-        /**
-         * 获取项目列表
-         */
-        subjectlist: function(opt){
-            $interio.transRequest('subjectlist',opt);
-        },
 		/**
          * 获取项目文件目录结构
          * urlData: {
-         *     subjectname 项目名称
+         *     id
          * }
          */
-        subjectfile: function(opt,urlData){
-            opt.url = buildUrl($ioconfig.getTrans('subjectfile').url,urlData,true);
-            $interio.transRequest('subjectfile',opt);
-        },
-		/**
-         * 新建项目
-         * urlData: {
-         *     subjectname 项目名称
-         * }
-         */
-        subjectadd: function(opt,urlData){
-            opt.url = buildUrl($ioconfig.getTrans('subjectadd').url,urlData,true);
-            $interio.transRequest('subjectadd',opt);
-        },
-		/**
-         * 删除项目
-         * urlData: {
-         *     subjectname 项目名称
-         * }
-         */
-        subjectdelete: function(opt,urlData){
-            opt.url = buildUrl($ioconfig.getTrans('subjectdelete').url,urlData,true);
-            $interio.transRequest('subjectdelete',opt);
-        },
-		/**
-         * 获取文件
-         * urlData: {
-         *     subjectname 项目名称
-         *     filepath 文件路径
-         * }
-         */
-        fileget: function(opt,urlData){
-            opt.url = buildUrl($ioconfig.getTrans('fileget').url,urlData,true);
-            $interio.transRequest('fileget',opt);
-        },
-		/**
-         * 新增文件
-         * urlData: {
-         *     subjectname 项目名称
-         *     filepath 文件路径
-         * }
-         */
-        fileadd: function(opt,urlData){
-            opt.url = buildUrl($ioconfig.getTrans('fileadd').url,urlData,true);
-            $interio.transRequest('fileadd',opt);
-        },
-		/**
-         * 更改文件
-         * urlData: {
-         *     subjectname 项目名称
-         *     filepath 文件路径
-         * }
-         */
-        filechange: function(opt,urlData){
-            opt.url = buildUrl($ioconfig.getTrans('filechange').url,urlData,true);
-            $interio.transRequest('filechange',opt);
-        },
-		/**
-         * 删除文件
-         * urlData: {
-         *     subjectname 项目名称
-         *     filepath 文件路径
-         * }
-         */
-        filedelete: function(opt,urlData){
-            opt.url = buildUrl($ioconfig.getTrans('filedelete').url,urlData,true);
-            $interio.transRequest('filedelete',opt);
+        main: function(opt,urlData){
+            opt.url = buildUrl($ioconfig.getTrans('main').url,urlData,true);
+            $interio.transRequest('main',opt);
         },
 		/**
          * 获取当前用户信息
          */
         userinfo: function(opt){
             $interio.transRequest('userinfo',opt);
-        },
-        /**
-         * 获取上传图片所需token
-         */
-        uptoken: function(opt){
-            $interio.transRequest('uptoken',opt);
         }
     };
 });

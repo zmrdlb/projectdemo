@@ -18,5 +18,7 @@ requirejs(['$','common/view'],function($,View){
 
 		console.log(result);
 
+	},{
+		needLogin: false
 	});
 });

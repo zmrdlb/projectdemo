@@ -16,11 +16,11 @@ define(function(){
     var orginarr = (function () {
         var host = location.host;
         if (/dev/.test(host)) {
-		    return ['http://inter.dev.net','http://login.dev.net'];
+		    return ['http://localhost:8000','http://baidu.com'];
         } else if(/qa/.test(host)) {
-            return ['http://inter.qa.net','http://login.qa.net'];
+            return ['http://inter.qa.net','http://baidu.com'];
         } else {
-            return ['http://inter.net','http://login.net'];
+            return ['http://inter.net','http://baidu.com'];
         }
     })();
 
@@ -30,6 +30,6 @@ define(function(){
     	//登录页面域名
     	loginorgin: orginarr[1],
 		//登陆页面url
-		loginurl: orginarr[1]+'/login'
+		loginurl: orginarr[1]+''
     };
 });

@@ -27,7 +27,6 @@ module.exports = function(grunt) {
 		paths: {
 		    '$': 'empty:',
             'jquery': 'empty:',
-            'jquery.throttle-debounce': 'empty:',
             'libio': 'widget/io',
             'libjson': 'widget/util/json',
             'libchannel': 'widget/util/channel',
@@ -42,8 +41,7 @@ module.exports = function(grunt) {
             'libclassdesign': 'widget/util/classdesign',
             'libtpl': 'widget/util/tpl',
             'libpage': 'widget/ui/page',
-            'libtab': 'widget/ui/tab',
-            'ace': 'empty:'
+            'libtab': 'widget/ui/tab'
         },
         map: {
             '*': {

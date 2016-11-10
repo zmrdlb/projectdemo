@@ -1,0 +1,1 @@
+define(["common/config","common/model"],function(e,t){var n=null,r={};return r.get=function(e){n==null?t.userinfo({success:function(t){n=t,e(n)}}):e(n)},r});

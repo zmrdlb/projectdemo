@@ -1,0 +1,1 @@
+define([],function(){var e=function(){var e=location.host;return/dev/.test(e)?["http://localhost:8000","http://baidu.com"]:/qa/.test(e)?["http://inter.qa.net","http://baidu.com"]:["http://inter.net","http://baidu.com"]}();return{modelorgin:e[0],loginorgin:e[1],loginurl:e[1]+""}});
