@@ -1,0 +1,271 @@
+/**
+ *  所有页面公共的css，包括：
+ *    1. reset.less
+ *    2. 公共布局layout.less
+ *  @project h5项目
+ *  @version 1.0
+ *  @author zhangmingrui | 592044573@qq.com
+ *  @date created 2015-12-02
+ */
+/*reset.css 统一浏览器基本样式*/
+@charset "UTF-8";
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+hr,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+button,
+input,
+select,
+textarea,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: none;
+  vertical-align: baseline;
+  font-size: 100%;
+}
+input,
+textarea,
+button,
+select {
+  outline: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+a,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+/**
+ *  页面公共css
+ *  @project wiki项目
+ *  @description 命名空间：.g-
+ *  @version 1.0
+ *  @author zhangmingrui | 592044573@qq.com
+ *  @date created 2016-11-02
+ */
+/**
+ *  实用工具库和css公共配置的引用。
+ *    包括tool.less和config.less的引用
+ *  @version 1.0
+ *  @author zhangmingrui | 592044573@qq.com
+ *  @date created 2015-12-02
+ */
+/**
+ *  项目整体定义的基本css变量：颜色、字体大小等
+ *  命名空间：.g-
+ *  @project h5项目
+ *  @version 1.0
+ *  @author zhangmingrui | 592044573@qq.com
+ *  @date created 2015-12-02
+ */
+/**
+ *   @section 图片路径
+ */
+/**
+ *  实用工具库，包括：tool 文件夹中的所有实用less方法
+ *  @version 1.0
+ *  @author zhangmingrui | 592044573@qq.com
+ *  @date created 2015-12-02
+ */
+/**
+ *  浮动相关的方法
+ *  @version 1.0
+ *  @author zhangmingrui | 592044573@qq.com
+ *  @date created 2015-12-02
+ */
+/* @section 清除浮动*/
+/**
+ *  文字换行折行等相关的方法
+ *  @version 1.0
+ *  @author zhangmingrui | 592044573@qq.com
+ *  @date created 2015-12-02
+ */
+/*折行*/
+/*多行超出显示省略号——css3——webkit内核支持*/
+/*单行超出显示省略号——css3*/
+/*单行显示不折行*/
+/**
+ *   @section 针对某些情况下，行高不生效。
+ *   原理：决定行高的是行内最高的元素的值。
+ */
+/**
+ *   给placeholder设置颜色
+ */
+/**
+ *  css3-transition动画
+ *  @version 1.0
+ *  @author zhangmingrui | 592044573@qq.com
+ *  @date created 2015-12-02
+ */
+/**
+ *   @section 所有属性值都自己设置
+ */
+/**
+ *  css3-transform动画
+ *  @version 1.0
+ *  @author zhangmingrui | 592044573@qq.com
+ *  @date created 2015-12-02
+ */
+/**
+ *   @section 所有属性值都自己设置
+ */
+/**
+ *  透明度设置方法。兼容ie
+ *  @version 1.0
+ *  @author zhangmingrui | 592044573@qq.com
+ *  @date created 2015-12-02
+ */
+/**
+ * @section 设置透明度，兼容ie
+ * @opacity 0~1
+ */
+html,
+body {
+  height: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+}
+/**
+ * @section 公共铺满全局loading。默认铺满body
+ */
+.g-full-loading {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3) url('../../img/common/loading-64.gif') no-repeat center;
+}
+/**
+ *  异步io请求状态提示
+ */
+.g-msg-io {
+  line-height: inherit;
+  text-align: center;
+}
+.g-msg-io.error {
+  color: #ff4400;
+}
+.g-msg-io.error a {
+  color: #007eff;
+}
+.g-msg-io.empty {
+  color: #999;
+}
+.g-msg-io.loading {
+  color: #999;
+}
+.g-msg-io.loading i {
+  width: 20px;
+  height: 20px;
+  background: url('../../img/common/loading-20.gif') no-repeat;
+  margin-right: 5px;
+}

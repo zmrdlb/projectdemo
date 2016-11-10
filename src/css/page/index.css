@@ -1,0 +1,106 @@
+/**
+ *  index页面
+ *  @project wiki项目
+ *  @description 命名空间：.p-index
+ *  @version 1.0
+ *  @author zhangmingrui | 592044573@qq.com
+ *  @date created 2016-11-02
+ */
+/**
+ *  实用工具库和css公共配置的引用。
+ *    包括tool.less和config.less的引用
+ *  @version 1.0
+ *  @author zhangmingrui | 592044573@qq.com
+ *  @date created 2015-12-02
+ */
+/**
+ *  项目整体定义的基本css变量：颜色、字体大小等
+ *  命名空间：.g-
+ *  @project h5项目
+ *  @version 1.0
+ *  @author zhangmingrui | 592044573@qq.com
+ *  @date created 2015-12-02
+ */
+/**
+ *   @section 图片路径
+ */
+/**
+ *  实用工具库，包括：tool 文件夹中的所有实用less方法
+ *  @version 1.0
+ *  @author zhangmingrui | 592044573@qq.com
+ *  @date created 2015-12-02
+ */
+/**
+ *  浮动相关的方法
+ *  @version 1.0
+ *  @author zhangmingrui | 592044573@qq.com
+ *  @date created 2015-12-02
+ */
+/* @section 清除浮动*/
+/**
+ *  文字换行折行等相关的方法
+ *  @version 1.0
+ *  @author zhangmingrui | 592044573@qq.com
+ *  @date created 2015-12-02
+ */
+/*折行*/
+/*多行超出显示省略号——css3——webkit内核支持*/
+/*单行超出显示省略号——css3*/
+/*单行显示不折行*/
+/**
+ *   @section 针对某些情况下，行高不生效。
+ *   原理：决定行高的是行内最高的元素的值。
+ */
+/**
+ *   给placeholder设置颜色
+ */
+/**
+ *  css3-transition动画
+ *  @version 1.0
+ *  @author zhangmingrui | 592044573@qq.com
+ *  @date created 2015-12-02
+ */
+/**
+ *   @section 所有属性值都自己设置
+ */
+/**
+ *  css3-transform动画
+ *  @version 1.0
+ *  @author zhangmingrui | 592044573@qq.com
+ *  @date created 2015-12-02
+ */
+/**
+ *   @section 所有属性值都自己设置
+ */
+/**
+ *  透明度设置方法。兼容ie
+ *  @version 1.0
+ *  @author zhangmingrui | 592044573@qq.com
+ *  @date created 2015-12-02
+ */
+/**
+ * @section 设置透明度，兼容ie
+ * @opacity 0~1
+ */
+/**
+ *  form表单组件
+ *  @project wiki项目
+ *  @description 命名空间：.m-form
+ *  @version 1.0
+ *  @author zhangmingrui | 592044573@qq.com
+ *  @date created 2016-11-02
+ */
+.m-form input {
+  display: block;
+  width: 100px;
+  font-size: 14px;
+  border: 1px solid blue;
+  margin-bottom: 10px;
+}
+.p-index .icon-index {
+  width: 60px;
+  height: 60px;
+  background: url('../../img/page/index/files-yao.svg') no-repeat;
+  background-size: 100% 100%;
+  background: url("../../img/page/index/files-yao.png") no-repeat \9;
+}

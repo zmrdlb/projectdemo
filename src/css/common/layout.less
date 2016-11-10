@@ -1,0 +1,55 @@
+/**
+ *  页面公共css
+ *  @project wiki项目
+ *  @description 命名空间：.g-
+ *  @version 1.0
+ *  @author zhangmingrui | 592044573@qq.com
+ *  @date created 2016-11-02
+ */
+
+@import 'core';
+
+html,body {
+    height: 100%;
+    font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+}
+
+
+/**
+ * @section 公共铺满全局loading。默认铺满body
+ */
+.g-full-loading {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.3) url('@{g-img-prefix}/common/loading-64.gif') no-repeat center;
+}
+
+/**
+ *  异步io请求状态提示
+ */
+.g-msg-io {
+    line-height: inherit;
+    text-align: center;
+    &.error { //一般性错误
+        color: #ff4400;
+        a {
+            color: #007eff;
+        }
+    }
+    &.empty { //数据为空
+        color: #999;
+    }
+    &.loading { //loading
+        color:#999;
+        i {
+            width: 20px;
+            height: 20px;
+            background: url('@{g-img-prefix}/common/loading-20.gif') no-repeat;
+            margin-right:5px;
+        }
+    }
+}
