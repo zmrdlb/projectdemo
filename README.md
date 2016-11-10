@@ -93,6 +93,12 @@
 
 - include: 拆分的模板
 
+> css.html: 引用公共css/page/global.css
+
+> js.html: 引用公共requirejs和js/page/global.js
+
+> meta.html: html头部meta设置
+
 - 其他文件为各个业务页面。demo.html则是模板使用demo。新建其他页面则可复制demo.html然后再进行修改。
 
 ### 1.2.6 section-模板sectiontpl最终生成的页面
@@ -107,11 +113,19 @@
 
 如果要测试dist下的代码，则改成 D:\mycoderoot\projectdemo\dist\
 
-## 2.2 运行
+## 2.2 开启node模拟接口
+
+定位到D:\mycoderoot\projectdemo
+
+执行 node userinter.js
+
+(userinter.js是用node写的一个简单的用户信息接口，如果想测试未登录，接口业务错误情况，则修改userinter.js里面返回的code值)
+
+## 2.3 运行
 
 http://web.dev.net/section/index.html
 
-## 2.3 grunt工具使用
+## 2.4 grunt工具使用
 
 为了达到多个项目共用同一份grunt npm包，所以请按照如下配置：
 
